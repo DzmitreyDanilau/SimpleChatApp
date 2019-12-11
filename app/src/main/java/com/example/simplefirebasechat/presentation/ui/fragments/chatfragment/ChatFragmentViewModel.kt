@@ -1,7 +1,7 @@
 package com.example.simplefirebasechat.presentation.ui.fragments.chatfragment
 
-import androidx.lifecycle.ViewModel
+import com.example.simplefirebasechat.presentation.base.BaseViewModel
 
-class ChatFragmentViewModel : ViewModel(){
+class ChatFragmentViewModel : BaseViewModel(){
 
 }

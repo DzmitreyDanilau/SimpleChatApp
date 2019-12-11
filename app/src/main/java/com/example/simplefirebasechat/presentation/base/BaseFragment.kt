@@ -25,7 +25,6 @@ abstract class BaseFragment<V : BaseViewModel> : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         performDi()
-
     }
 
     override fun onCreateView(
@@ -33,7 +32,6 @@ abstract class BaseFragment<V : BaseViewModel> : Fragment() {
     ): View? {
         return inflater.inflate(fragmentResId, container, false)
     }
-
 
     private fun performDi(){
 

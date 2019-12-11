@@ -5,10 +5,9 @@ import com.example.simplefirebasechat.R
 import com.example.simplefirebasechat.presentation.base.BaseFragment
 import kotlin.reflect.KClass
 
-class RegistrationFragment : BaseFragment<UserAuthViewModel>() {
-
+class SignInFragment : BaseFragment<UserAuthViewModel>() {
     override val fragmentResId: Int
-        get() = R.layout.fragment_registration
+        get() = R.layout.fragment_login
 
     override fun getViewModelClass(): KClass<UserAuthViewModel> {
         return UserAuthViewModel::class
