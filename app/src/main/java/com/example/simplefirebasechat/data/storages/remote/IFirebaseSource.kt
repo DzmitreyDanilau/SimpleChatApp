@@ -1,4 +1,4 @@
-package com.example.simplefirebasechat.data.remotestorages
+package com.example.simplefirebasechat.data.storages.remote
 
 import io.reactivex.Completable
 

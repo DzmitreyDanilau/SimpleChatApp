@@ -1,11 +1,12 @@
-package com.example.simplefirebasechat.data.remotestorages
+package com.example.simplefirebasechat.data.storages.remote
 
+import com.example.simplefirebasechat.data.storages.Storage
 import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Completable
 import javax.inject.Inject
 
 class FireBaseSourceImpl @Inject constructor(private val firebaseAuthInstance: FirebaseAuth) :
-    IFirebaseSource {
+    IFirebaseSource, Storage {
 
 
     override fun login(email: String, password: String) = Completable.create { emitter ->

@@ -1,6 +1,6 @@
 package com.example.simplefirebasechat.data.repositories.authrepository
 
-import com.example.simplefirebasechat.data.remotestorages.IFirebaseSource
+import com.example.simplefirebasechat.data.storages.remote.IFirebaseSource
 import io.reactivex.Completable
 import javax.inject.Inject
 
