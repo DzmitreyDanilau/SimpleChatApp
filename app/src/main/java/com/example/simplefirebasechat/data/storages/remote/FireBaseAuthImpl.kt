@@ -3,10 +3,12 @@ package com.example.simplefirebasechat.data.storages.remote
 import com.example.simplefirebasechat.data.storages.Storage
 import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Completable
+import io.reactivex.Scheduler
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class FireBaseSourceImpl @Inject constructor(private val firebaseAuthInstance: FirebaseAuth) :
-    IFirebaseSource, Storage {
+class FireBaseAuthImpl @Inject constructor(private val firebaseAuthInstance: FirebaseAuth) :
+    IFirebaseAuth, Storage {
 
 
     override fun login(email: String, password: String) = Completable.create { emitter ->
@@ -18,7 +20,7 @@ class FireBaseSourceImpl @Inject constructor(private val firebaseAuthInstance: F
                     emitter.onError(it.exception!!)
             }
         }
-    }
+    }.subscribeOn(Schedulers.io())
 
     override fun register(email: String, password: String) = Completable.create { emitter ->
         firebaseAuthInstance.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -29,7 +31,9 @@ class FireBaseSourceImpl @Inject constructor(private val firebaseAuthInstance: F
                     emitter.onError(it.exception!!)
             }
         }
-    }
+    }.subscribeOn(Schedulers.io())
 
-    override fun logout() = firebaseAuthInstance.signOut()
+    override fun logout() = Completable.create {
+        firebaseAuthInstance.signOut()
+    }.subscribeOn(Schedulers.io())
 }

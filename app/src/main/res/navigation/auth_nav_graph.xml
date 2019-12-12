@@ -3,12 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auth_nav_graph"
-    app:startDestination="@id/authFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/authFragment"
-        android:name="com.example.simplefirebasechat.presentation.ui.fragments.signInfragment.AuthFragment"
-        android:label="AuthFragment"
+        android:id="@+id/registrationFragment"
+        android:name="com.example.simplefirebasechat.presentation.ui.fragments.signInfragment.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration"
+        >
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.simplefirebasechat.presentation.ui.fragments.signInfragment.LoginFragment"
+        android:label="LoginFragment"
         tools:layout="@layout/fragment_login"
         />
 </navigation>

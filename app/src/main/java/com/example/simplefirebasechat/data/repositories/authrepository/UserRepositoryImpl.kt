@@ -1,10 +1,11 @@
 package com.example.simplefirebasechat.data.repositories.authrepository
 
-import com.example.simplefirebasechat.data.storages.remote.IFirebaseSource
+import com.example.simplefirebasechat.data.storages.remote.IFirebaseAuth
 import io.reactivex.Completable
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class UserRepositoryImpl @Inject constructor(private val firebaseSource: IFirebaseSource) :
+class UserRepositoryImpl @Inject constructor(private val firebaseSource: IFirebaseAuth) :
     IUserRepository {
 
     override fun login(email: String, password: String): Completable {
@@ -15,7 +16,7 @@ class UserRepositoryImpl @Inject constructor(private val firebaseSource: IFireba
         return firebaseSource.register(email, password)
     }
 
-    override fun logout() {
+    override fun logout(): Completable {
         return firebaseSource.logout()
     }
 }

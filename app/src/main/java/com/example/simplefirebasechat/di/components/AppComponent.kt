@@ -18,7 +18,9 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent {
+
     fun registerSignInComponent(): SignInComponent.Factory
+
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent

@@ -17,14 +17,8 @@ import timber.log.Timber
 import kotlin.reflect.KClass
 
 
-class SignInActivity : BaseActivity<SignIntActivityViewModel>(), OnConnectionFailedListener,
+class SignInActivity : BaseActivity<SignIntActivityViewModel>(),
     View.OnClickListener {
-
-
-    override fun onConnectionFailed(connectionResult: ConnectionResult) {
-        Timber.d("onConnectionFailed:$connectionResult")
-        Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show()
-    }
 
 
     override val layoutResId: Int
