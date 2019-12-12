@@ -9,8 +9,7 @@ import com.example.simplefirebasechat.presentation.base.BaseActivity
 import kotlin.reflect.KClass
 
 
-class SignInActivity : BaseActivity<SignInActivityViewModel>(),
-    View.OnClickListener {
+class SignInActivity : BaseActivity<SignInActivityViewModel>() {
     lateinit var authComponent: AuthComponent
 
     override val layoutResId: Int
@@ -23,10 +22,6 @@ class SignInActivity : BaseActivity<SignInActivityViewModel>(),
     override fun onCreate(savedInstanceState: Bundle?) {
         performDI()
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onClick(v: View?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun performDI() {

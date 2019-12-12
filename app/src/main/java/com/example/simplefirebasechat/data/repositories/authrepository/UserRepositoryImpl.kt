@@ -1,10 +1,7 @@
 package com.example.simplefirebasechat.data.repositories.authrepository
 
-import com.example.simplefirebasechat.data.storages.remote.FireBaseAuthImpl
-import com.example.simplefirebasechat.data.storages.remote.IFirebaseAuth
-import com.google.firebase.auth.FirebaseAuth
+import com.example.simplefirebasechat.data.firebase.firebaseauth.FireBaseAuthImpl
 import io.reactivex.Completable
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(val firebaseSource: FireBaseAuthImpl) :

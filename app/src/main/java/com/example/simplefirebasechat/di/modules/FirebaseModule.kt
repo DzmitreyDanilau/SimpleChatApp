@@ -1,6 +1,6 @@
 package com.example.simplefirebasechat.di.modules
 
-import com.example.simplefirebasechat.data.storages.remote.FireBaseAuthImpl
+import com.example.simplefirebasechat.data.firebase.firebaseauth.FireBaseAuthImpl
 import dagger.Module
 import dagger.Provides
 
