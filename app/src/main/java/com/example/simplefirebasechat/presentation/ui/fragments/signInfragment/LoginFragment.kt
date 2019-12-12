@@ -1,6 +1,7 @@
 package com.example.simplefirebasechat.presentation.ui.fragments.signInfragment
 
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -12,7 +13,9 @@ import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.simplefirebasechat.R
+import com.example.simplefirebasechat.SimpleChatApp
 import com.example.simplefirebasechat.presentation.base.BaseFragment
+import com.example.simplefirebasechat.presentation.ui.activities.authactivity.SignInActivity
 import com.example.simplefirebasechat.utils.afterTextChanged
 import kotlin.reflect.KClass
 
@@ -31,6 +34,11 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
         return UserAuthViewModel::class
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        performDI()
+    }
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         username = view.findViewById(R.id.username)
@@ -58,7 +66,6 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
 
         loginViewModel.loginResult.observe(this, Observer {
             val loginResult = it ?: return@Observer
-
             loading.visibility = View.GONE
             if (loginResult.error != null) {
                 showLoginFailed(loginResult.error)
@@ -72,6 +79,7 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
     }
 
     private fun setViewListeners() {
+
         username.afterTextChanged {
             loginViewModel.loginDataChanged(
                 username.text.toString(),
@@ -111,7 +119,7 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
     }
 
     private fun performDI() {
-
+        (activity as SignInActivity).signInComponent.inject(this)
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {

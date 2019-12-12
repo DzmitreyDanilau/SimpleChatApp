@@ -21,19 +21,13 @@ abstract class BaseActivity<V : BaseViewModel> : AppCompatActivity() {
     protected abstract fun getViewModelClass(): KClass<V>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        performDI()
-        initViewModel()
-        setContentView(layoutResId)
-        Timber.d("onCreate %s", this.toString())
         super.onCreate(savedInstanceState)
+        setContentView(layoutResId)
+        initViewModel()
+        Timber.d("onCreate %s", this.toString())
     }
 
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(getViewModelClass().java)
-    }
-
-
-    private fun performDI(){
-
     }
 }

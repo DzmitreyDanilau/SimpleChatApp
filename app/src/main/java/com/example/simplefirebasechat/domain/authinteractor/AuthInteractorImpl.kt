@@ -16,7 +16,7 @@ class AuthInteractorImpl @Inject constructor(
         return userRepository.register(email, password)
     }
 
-    override fun logout() {
+    override fun logout(): Completable {
         return userRepository.logout()
     }
 }

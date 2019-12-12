@@ -1,9 +1,8 @@
 package com.example.simplefirebasechat.di.modules
 
-import com.example.simplefirebasechat.di.components.SignInComponent
+import com.example.simplefirebasechat.di.components.AuthComponent
 import dagger.Module
-import javax.inject.Singleton
 
 
-@Module(subcomponents = [SignInComponent::class])
+@Module(subcomponents = [AuthComponent::class])
 class AppSubComponents

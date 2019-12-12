@@ -1,9 +1,7 @@
 package com.example.simplefirebasechat.di.components
 
 import android.content.Context
-import com.example.simplefirebasechat.di.modules.AppModule
-import com.example.simplefirebasechat.di.modules.AppSubComponents
-import com.example.simplefirebasechat.di.modules.AppViewModelModule
+import com.example.simplefirebasechat.di.modules.*
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -14,12 +12,14 @@ import javax.inject.Singleton
     [
         AppSubComponents::class,
         AppModule::class,
-        AppViewModelModule::class
+        AppViewModelsModule::class,
+        AppInteractorsModule::class,
+        AppRepositoriesModule::class
     ]
 )
 interface AppComponent {
 
-    fun registerSignInComponent(): SignInComponent.Factory
+    fun registerAuthComponent(): AuthComponent.Factory
 
     @Component.Factory
     interface Factory {

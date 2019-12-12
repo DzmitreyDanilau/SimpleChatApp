@@ -1,6 +1,6 @@
 package com.example.simplefirebasechat.di.modules
 
-import com.google.firebase.auth.FirebaseAuth
+import com.example.simplefirebasechat.data.storages.remote.FireBaseAuthImpl
 import dagger.Module
 import dagger.Provides
 
@@ -8,7 +8,7 @@ import dagger.Provides
 @Module
 class FirebaseModule {
     @Provides
-    fun provideFirebaseAtuhInstance(): FirebaseAuth {
-        return FirebaseAuth.getInstance()
+    fun provideFirebaseAuthImpl(): FireBaseAuthImpl {
+        return FireBaseAuthImpl()
     }
 }

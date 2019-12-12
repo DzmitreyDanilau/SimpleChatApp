@@ -4,6 +4,7 @@ import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.simplefirebasechat.R
+import com.example.simplefirebasechat.di.scopes.ActivityScope
 import com.example.simplefirebasechat.domain.authinteractor.IAuthInteractor
 import com.example.simplefirebasechat.presentation.base.BaseViewModel
 import com.example.simplefirebasechat.utils.addTo
@@ -22,7 +23,6 @@ class UserAuthViewModel @Inject constructor(private val authInteractor: IAuthInt
 
     private val _loginResult = MutableLiveData<LoginResult>()
     val loginResult: LiveData<LoginResult> = _loginResult
-
 
     fun login(username: String, password: String) {
         authInteractor.login(username, password)
