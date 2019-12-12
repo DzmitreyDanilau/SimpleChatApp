@@ -36,7 +36,6 @@ class UserAuthViewModel @Inject constructor(private val authInteractor: IAuthInt
                 }
             ) addTo CompositeDisposable()
     }
-
     fun loginDataChanged(username: String, password: String) {
         if (!isUserNameValid(username)) {
             _loginForm.value =

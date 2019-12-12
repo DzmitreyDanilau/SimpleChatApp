@@ -13,7 +13,6 @@ import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.simplefirebasechat.R
-import com.example.simplefirebasechat.SimpleChatApp
 import com.example.simplefirebasechat.presentation.base.BaseFragment
 import com.example.simplefirebasechat.presentation.ui.activities.authactivity.SignInActivity
 import com.example.simplefirebasechat.utils.afterTextChanged
@@ -74,7 +73,7 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
                 updateUiWithUser(loginResult.success)
             }
             //Complete and destroy login activity once successful
-            activity?.finish()
+//            activity?.finish()
         })
     }
 
@@ -119,7 +118,7 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
     }
 
     private fun performDI() {
-        (activity as SignInActivity).signInComponent.inject(this)
+        (activity as SignInActivity).authComponent.inject(this)
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {

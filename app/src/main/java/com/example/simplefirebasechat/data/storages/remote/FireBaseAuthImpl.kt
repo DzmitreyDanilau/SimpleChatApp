@@ -8,9 +8,8 @@ import javax.inject.Inject
 
 class FireBaseAuthImpl @Inject constructor() : IFirebaseAuth, Storage {
 
-    private val firebaseAuth: FirebaseAuth by lazy {
-        FirebaseAuth.getInstance()
-    }
+    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+
 
     override fun login(email: String, password: String) = Completable.create { emitter ->
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {

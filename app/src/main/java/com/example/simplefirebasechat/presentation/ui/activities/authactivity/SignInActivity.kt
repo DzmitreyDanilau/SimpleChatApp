@@ -11,7 +11,7 @@ import kotlin.reflect.KClass
 
 class SignInActivity : BaseActivity<SignInActivityViewModel>(),
     View.OnClickListener {
-    lateinit var signInComponent: AuthComponent
+    lateinit var authComponent: AuthComponent
 
     override val layoutResId: Int
         get() = R.layout.activity_sign_in
@@ -30,9 +30,9 @@ class SignInActivity : BaseActivity<SignInActivityViewModel>(),
     }
 
     private fun performDI() {
-        signInComponent =
+        authComponent =
             (application as SimpleChatApp).appComponent.registerAuthComponent().create()
-        signInComponent.inject(this)
+        authComponent.inject(this)
     }
 
     companion object {
