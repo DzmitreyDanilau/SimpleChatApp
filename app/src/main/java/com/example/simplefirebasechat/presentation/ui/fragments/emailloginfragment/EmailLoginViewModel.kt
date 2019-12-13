@@ -1,10 +1,9 @@
-package com.example.simplefirebasechat.presentation.ui.fragments.signInfragment
+package com.example.simplefirebasechat.presentation.ui.fragments.emailloginfragment
 
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.simplefirebasechat.R
-import com.example.simplefirebasechat.di.scopes.ActivityScope
 import com.example.simplefirebasechat.domain.authinteractor.IAuthInteractor
 import com.example.simplefirebasechat.presentation.base.BaseViewModel
 import com.example.simplefirebasechat.utils.addTo
@@ -12,7 +11,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class UserAuthViewModel @Inject constructor(private val authInteractor: IAuthInteractor) :
+class EmailLoginViewModel @Inject constructor(private val authInteractor: IAuthInteractor) :
     BaseViewModel() {
 
     override val compositeDisposable: CompositeDisposable

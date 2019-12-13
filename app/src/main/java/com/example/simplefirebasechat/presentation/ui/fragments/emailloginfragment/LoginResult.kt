@@ -1,4 +1,4 @@
-package com.example.simplefirebasechat.presentation.ui.fragments.signInfragment
+package com.example.simplefirebasechat.presentation.ui.fragments.emailloginfragment
 
 /**
  * Authentication result : success (user details) or error message.

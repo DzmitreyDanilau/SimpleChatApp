@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.simplefirebasechat.di.scopes.ViewModelKey
 import com.example.simplefirebasechat.presentation.ui.activities.authactivity.SignInActivityViewModel
-import com.example.simplefirebasechat.presentation.ui.fragments.signInfragment.UserAuthViewModel
+import com.example.simplefirebasechat.presentation.ui.fragments.emailloginfragment.EmailLoginViewModel
 import com.example.simplefirebasechat.utils.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -17,8 +17,8 @@ interface AppViewModelsModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(UserAuthViewModel::class)
-    fun provideUserAuthViewModel(viewModel: UserAuthViewModel): ViewModel
+    @ViewModelKey(EmailLoginViewModel::class)
+    fun provideUserAuthViewModel(viewModel: EmailLoginViewModel): ViewModel
 
     @Binds
     @IntoMap

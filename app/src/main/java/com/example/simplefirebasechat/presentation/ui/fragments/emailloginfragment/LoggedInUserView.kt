@@ -1,4 +1,4 @@
-package com.example.simplefirebasechat.presentation.ui.fragments.signInfragment
+package com.example.simplefirebasechat.presentation.ui.fragments.emailloginfragment
 
 /**
  * User details post authentication that is exposed to the UI

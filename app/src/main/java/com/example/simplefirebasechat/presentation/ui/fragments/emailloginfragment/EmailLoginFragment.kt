@@ -1,4 +1,4 @@
-package com.example.simplefirebasechat.presentation.ui.fragments.signInfragment
+package com.example.simplefirebasechat.presentation.ui.fragments.emailloginfragment
 
 
 import android.content.Context
@@ -18,19 +18,19 @@ import com.example.simplefirebasechat.presentation.ui.activities.authactivity.Si
 import com.example.simplefirebasechat.utils.afterTextChanged
 import kotlin.reflect.KClass
 
-class LoginFragment : BaseFragment<UserAuthViewModel>() {
+class EmailLoginFragment : BaseFragment<EmailLoginViewModel>() {
     private lateinit var username: EditText
     private lateinit var password: EditText
     private lateinit var login: Button
     private lateinit var loading: ProgressBar
 
-    private lateinit var loginViewModel: UserAuthViewModel
+    private lateinit var loginViewModel: EmailLoginViewModel
 
     override val fragmentResId: Int
         get() = R.layout.fragment_login
 
-    override fun getViewModelClass(): KClass<UserAuthViewModel> {
-        return UserAuthViewModel::class
+    override fun getViewModelClass(): KClass<EmailLoginViewModel> {
+        return EmailLoginViewModel::class
     }
 
     override fun onAttach(context: Context) {
@@ -114,7 +114,7 @@ class LoginFragment : BaseFragment<UserAuthViewModel>() {
 
     private fun populateViewModel() {
         loginViewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(UserAuthViewModel::class.java)
+            ViewModelProviders.of(this, viewModelFactory).get(EmailLoginViewModel::class.java)
     }
 
     private fun performDI() {
